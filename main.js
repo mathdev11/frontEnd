@@ -2,20 +2,19 @@ const form = document.getElementById('form-deposito');
 const numA = document.getElementById('numeroUm');
 const numB = document.getElementById('numeroDois');
     
-    function validaFormulario(numA,numB) {
-        if(numB > numA){
-        }
+    function validaFormulario(valorA,valorB) {
+        return valorB > valorA;
     }
 
     form.addEventListener('submit', function(e){
         e.preventDefault();
 
-        const campoB = parseFloat(numA.value);
-        const campoA = parseFloat(numB.value);
-        const mensagemSucesso= `Está correto! O valor de ${campoA.value} é menor que o do ${campoB.value}`
-        const mensagemError= `A premissa não está correta!`
-
-        formEValido = validaFormulario()
+        const campoB = parseFloat(numB.value);
+        const campoA = parseFloat(numA.value);
+        const mensagemSucesso= `Está correto! O valor de ${campoA} é menor que o do ${campoB}`
+        const mensagemError= `Tente novamente`
+        const formEValido = validaFormulario(campoA, campoB);
+        
         if(formEValido) {
             const containerMensagemSucesso = document.querySelector('.success-message');
             containerMensagemSucesso.innerHTML = mensagemSucesso;
@@ -26,5 +25,4 @@ const numB = document.getElementById('numeroDois');
             containerMensagemError.innerHTML = mensagemError;   
             containerMensagemError.style.display = 'block';
     }
-    })
-console.log(form);  
+    });

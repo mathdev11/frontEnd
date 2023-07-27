@@ -54,7 +54,7 @@ input[type="number"] {
 }
 
 .error-message{
-    background-color:black;
+    background-color: #ccc;
     padding: 16px;
     color:red;
     display: none;
